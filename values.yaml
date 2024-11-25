@@ -264,7 +264,13 @@ ingress:
     route.openshift.io/termination: edge
   hosts:
     - host: n8n.apps.inf-tocp.pmb.cz
-      paths: []
+      paths:
+      - backend:
+          service:
+            name: n8n
+            port:
+              number: 80
+        pathType: ImplementationSpecific
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:

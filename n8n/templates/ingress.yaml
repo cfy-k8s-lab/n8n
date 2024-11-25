@@ -18,3 +18,10 @@ spec:
     - host: "n8n.apps.inf-tocp.pmb.cz"
       http:
         paths:
+          - path: map[backend:map[service:map[name:n8n port:map[number:80]]] pathType:ImplementationSpecific]
+            pathType: Prefix
+            backend:
+              service:
+                name: n8n
+                port:
+                  number: 80
