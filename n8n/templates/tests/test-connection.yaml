@@ -19,3 +19,24 @@ spec:
       command: ['wget']
       args: ['n8n:80']
   restartPolicy: Never
+---
+# Source: n8n/templates/tests/test-connection.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "n8n-test-connection"
+  labels:
+    helm.sh/chart: n8n-0.25.2
+    app.kubernetes.io/name: n8n
+    app.kubernetes.io/instance: n8n
+    app.kubernetes.io/version: "1.58.2"
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['n8n:80']
+  restartPolicy: Never
