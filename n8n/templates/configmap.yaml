@@ -1,0 +1,20 @@
+---
+# Source: n8n/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: n8n
+  labels:
+    helm.sh/chart: n8n-0.25.2
+    app.kubernetes.io/name: n8n
+    app.kubernetes.io/instance: n8n
+    app.kubernetes.io/version: "1.58.2"
+    app.kubernetes.io/managed-by: Helm
+data:
+  config.json: |
+    {
+      "executions": {
+        "pruneData": "true",
+        "pruneDataMaxAge": 3760
+      }
+    }
