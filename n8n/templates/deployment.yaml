@@ -22,7 +22,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: 89536e8ce0a39ccfdd3ff32ec70d4f6f11182bf0d74aca21e981a4d2ec35534f
+        checksum/config: 74f3a37da8d2a07348b1ec399b3134793dbe5aace26723c4a1d4bfaf725fa6d0
       labels:
         app.kubernetes.io/name: n8n
         app.kubernetes.io/instance: n8n
@@ -31,10 +31,10 @@ spec:
     spec:
       serviceAccountName: n8n
       securityContext:
-        fsGroup: 1000
-        runAsGroup: 1000
+        fsGroup: 1000720000
+        runAsGroup: 1000720000
         runAsNonRoot: true
-        runAsUser: 1000
+        runAsUser: 1000720000
       containers:
         - name: n8n
           securityContext:
